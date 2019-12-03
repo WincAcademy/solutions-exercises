@@ -106,19 +106,19 @@ const heroes = [
   }
 ];
 
-//Maak een array van alle superhelden namen
+// 1 Maak een array van alle superhelden namen
 const heroNames = heroes.map(hero => {
   return hero.name;
 });
-// console.log(heroNames);
+console.log(heroNames);
 
-// Maak een array van alle "lichte" superhelden (< 190 pounds)
+// 2 Maak een array van alle "lichte" superhelden (< 190 pounds)
 const lightHeroes = heroes.filter(hero => {
   return hero.weight < 190;
 });
 console.log(lightHeroes.length);
 
-// Maak een array met de namen van de superhelden die 200 pounds wegen
+// 3 Maak een array met de namen van de superhelden die 200 pounds wegen
 const heavySuperHeroes = heroes.filter(hero => hero.weight == 200);
 const heavySuperHeroNames = heavySuperHeroes.map(hero => hero.name);
 
@@ -128,22 +128,22 @@ const heavySuperHeroNames = heroes
   .map(hero => hero.name);
 console.log(heavySuperHeroNames);
 
-//Maak een array met alle comics waar de superhelden hun "first apprearances" hebben gehad
+// 4 Maak een array met alle comics waar de superhelden hun "first apprearances" hebben gehad
 const firstAppearance = heroes.map(hero => hero.first_appearance);
 console.log("firest appearance:", firstAppearance);
 
-// Maak een array met alle superhelden van DC Comics en een array met alle superhelden van Marvel Comics
+// 5 Maak een array met alle superhelden van DC Comics en een array met alle superhelden van Marvel Comics
 const DCComics = heroes.filter(hero => hero.publisher === "DC Comics");
 const marvelComics = heroes.filter(hero => hero.publisher === "Marvel Comics");
 console.log("DC Comics:", DCComics, "Marvel Comics:", marvelComics);
 
-//Tel het gewicht van alle superhelden van DC Comics bij elkaar op
+// 6 Tel het gewicht van alle superhelden van DC Comics bij elkaar op
 const addedWeightDC = DCComics.map(hero => {
   return hero.weight !== "unknown" ? parseInt(hero.weight, 10) : 0;
 }).reduce((weight1, weight2) => weight1 + weight2, 0);
 console.log("totalWeight of DC Comics:", addedWeightDC);
 
-//Doe hetzelfde met alle superhelden van Marvel Comics
+// 7 Doe hetzelfde met alle superhelden van Marvel Comics
 const addedWeightMarvel = marvelComics
   .map(hero => {
     return hero.weight !== "unknown" ? parseInt(hero.weight, 10) : 0;
@@ -151,4 +151,4 @@ const addedWeightMarvel = marvelComics
   .reduce((weight1, weight2) => weight1 + weight2, 0);
 console.log("totalWeight of Marvel:", addedWeightMarvel);
 
-// Bonus: vind de zwaarste superheld !
+// 8 Bonus: vind de zwaarste superheld !
