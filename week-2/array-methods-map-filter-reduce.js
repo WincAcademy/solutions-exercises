@@ -159,7 +159,7 @@ const addedWeightDC = DCComics.map(hero => {
   return hero.weight !== "unknown" ? parseInt(hero.weight, 10) : 0;
 }).reduce((weight1, weight2) => weight1 + weight2);
 
-console.log("totalWeight of DC Comics - supersmall version:", addedWeightDC);
+console.log("TotalWeight of DC Comics - supersmall version:", addedWeightDC);
 
 //De bovenstaande oplossing kun je ook wat uitgebreider opschrijven:
 const heroWeights = DCComics.map(hero => {
@@ -176,7 +176,7 @@ const heroWeights = DCComics.map(hero => {
 const addedWeightOfHeroes = heroWeights.reduce((weight1, weight2) => {
   return weight1 + weight2;
 });
-console.log("totalWeight of DC Comics:", addedWeightDC, addedWeightOfHeroes);
+console.log("TotalWeight of DC Comics:", addedWeightDC, addedWeightOfHeroes);
 
 // 7 Doe hetzelfde met alle superhelden van Marvel Comics
 const addedWeightMarvel = marvelComics
@@ -185,7 +185,7 @@ const addedWeightMarvel = marvelComics
   })
   .reduce((weight1, weight2) => weight1 + weight2, 0);
 // die 0 op het laats, daarmee geef je aan wat de initiele waarde is van de reduce functie.
-console.log("totalWeight of Marvel:", addedWeightMarvel);
+console.log("TotalWeight of Marvel:", addedWeightMarvel);
 
 // 8 Bonus: vind de zwaarste superheld!
 // First cast all values to a number or 0 if unknown
@@ -207,4 +207,4 @@ const heaviestHero = allHeroes.reduce(
   // met deze laatste waarde geef je aan wat de initiele waarde moet zijn van de functie
 );
 
-console.log("heavies hero:", heaviestHero);
+console.log("Heaviest hero:", heaviestHero);
