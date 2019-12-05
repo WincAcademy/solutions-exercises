@@ -6,29 +6,49 @@ const isArray = function(input) {
 console.log(isArray("Winc Winc, nudge nudge")); // false
 console.log(isArray([1, 2, 4, 0])); // true
 
-// B
+//B
+const amountOfElementsInArray = function(array) {
+  return array.length;
+};
+console.log(amountOfElementsInArray(["appels", "peren", "citroenen"])); // 3
+
+// C
 // Er zijn 3 verschillende oplossingen (misschien zelfs meer! Kun je er nog 1 bedenken?)
-const benelux = function(array) {
+const selectBelgiumFromBenelux = function(array) {
   return array[0];
 };
 
 // OF
-const beneluxShift = function(array) {
+const selectBelgiumFromBeneluxShift = function(array) {
   return array.shift();
 };
 
 // OF
-//Met negatieve nummers kan je slice selecteren van het einde van een array
-const beneluxSlice = function(array) {
-  return array.slice(-6, 1);
+const selectBelgiumFromBeneluxSlice = function(array) {
+  return array.slice(0, 1);
 };
 
-console.log(benelux(["Belgie", 1, "Nederland", 2, "Luxemburg", 3])); // resultaat: "Belgie"
-console.log(beneluxShift(["Belgie", 1, "Nederland", 2, "Luxemburg", 3])); // resultaat: "Belgie"
-console.log(beneluxSlice(["Belgie", 1, "Nederland", 2, "Luxemburg", 3])); // resultaat: ["Belgie"]
+console.log(selectBelgiumFromBenelux(["Belgie", "Nederland", "Luxemburg"])); // resultaat: "Belgie"
+console.log(
+  selectBelgiumFromBeneluxShift(["Belgie", "Nederland", "Luxemburg"])
+); // resultaat: "Belgie"
+console.log(
+  selectBelgiumFromBeneluxSlice(["Belgie", "Nederland", "Luxemburg"])
+); // resultaat: ["Belgie"]
 // Let op! Slice retourneert dus een nieuwe array in plaats van alleen het element. Wil je dat?
 
-// C
+// D
+const lastElementInArray = function(array) {
+  return array.pop();
+};
+
+const lastElementInArray2 = function(array) {
+  return array[array.lenght - 1];
+};
+console.log(lastElementInArray(["Haas", "Cavia", "Kip", "Schildpad"])); // resultaat: "Schildpad"
+console.log(lastElementInArray2(["Haas", "Cavia", "Kip", "Schildpad"])); // resultaat: "Schildpad"
+
+// E
 const presidents = ["Trump", "Obama", "Bush", "Clinton"];
 
 const impeachTrumpSlice = function(array) {
@@ -52,8 +72,7 @@ const impeachTrumpSplice = function(array) {
 console.log(impeachTrumpSlice(presidents)); // ["Obama", "Bush", "Clinton"]
 console.log(impeachTrumpSplice(presidents)); // ["Obama", "Bush", "Clinton"]
 
-// D
-
+// F
 const stringsTogether = function(array) {
   return array.join(" ");
 };
@@ -61,7 +80,7 @@ const stringsTogether = function(array) {
 console.log(stringsTogether(["Winc", "Academy", "is", "leuk", ";-}"]));
 //resultaat: "Winc Academy is leuk ;-}"
 
-// E
+// G
 const combineArrays = function(array1, array2) {
   return array1.concat(array2);
 };

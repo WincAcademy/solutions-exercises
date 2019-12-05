@@ -1,4 +1,4 @@
-// A
+// A Superheroes
 const superheroes = [
   { name: "Batman", alter_ego: "Bruce Wayne" },
   { name: "Superman", alter_ego: "Clark Kent" },
@@ -11,7 +11,7 @@ const findSpiderMan = function(superheroes) {
 };
 console.log("Find Spiderman:", findSpiderMan(superheroes));
 
-// B
+// B Double Array values
 const doubleArrayValues = function(array) {
   let newArray = [];
   array.forEach(number => {
@@ -40,21 +40,28 @@ console.log(doubleArrayValuesArrow([4, 1, 1, 1, 4]));
 console.log(doubleArrayValuesShortHand([4, 1, 1, 1, 4]));
 // expected output: [4, 4, 4, 4, 4, 4]
 
-// C
-const isBiggerThan10 = function(array) {
+// C Is Bigger than 10
+const containsNumberBiggerThan10 = function(array) {
   return array.some(number => {
     number > 10;
   });
 };
-console.log("Je suis bigger than 10", isBiggerThan10([1, 4, 3, 6, 9, 7, 11]));
+// Let op! Wanneer je van een functie verwacht dat deze True of False (een boolean) retourneert, is het gebruikelijk om er een werkwoord voor te zetten.
+// zodat het een gesloten vraag wordt.
+console.log(
+  "Je suis bigger than 10:",
+  containsNumberBiggerThan10([1, 4, 3, 6, 9, 7, 11])
+);
+
 // D
-function italyInTheGreat7(array) {
+function isItalyInTheGreat7(array) {
   return array.includes(country => {
     country === "Italy";
   });
 }
 console.log(
-  italyInTheGreat7([
+  "Is Italie aanwezig?:",
+  isItalyInTheGreat7([
     "Canada",
     "France",
     "Germany",
@@ -86,7 +93,7 @@ console.log(tenfoldMap([1, 4, 3, 6, 9, 7, 11]));
 
 // F
 
-function below100(array) {
+function isBelow100(array) {
   return array.every(number => {
     return number < 100;
   });
@@ -94,7 +101,12 @@ function below100(array) {
 // result should be [1, 81, 4, 53, 3, 6, 79, 2, 43, 7, 28, 11, 77, 84, 98]
 console.log(
   "Onder de 100?:",
-  below100([1, 81, 4, 53, 3, 6, 79, 2, 43, 7, 28, 101, 11, 77, 84, 98])
+  isBelow100([1, 81, 4, 53, 3, 6, 79, 2, 43, 7, 28, 101, 11, 77, 84, 98])
+);
+// result should be [1, 81, 4, 53, 3, 6, 79, 2, 43, 7, 28, 11, 77, 84, 98]
+console.log(
+  "Onder de 100?:",
+  isBelow100([1, 81, 4, 53, 3, 6, 79, 2, 43, 7, 28, 101, 11, 77, 84, 98])
 );
 
 // G
