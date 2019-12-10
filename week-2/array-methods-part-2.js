@@ -98,12 +98,10 @@ function isBelow100(array) {
     return number < 100;
   });
 }
-// result should be [1, 81, 4, 53, 3, 6, 79, 2, 43, 7, 28, 11, 77, 84, 98]
 console.log(
   "Onder de 100?:",
   isBelow100([1, 81, 4, 53, 3, 6, 79, 2, 43, 7, 28, 101, 11, 77, 84, 98])
 );
-// result should be [1, 81, 4, 53, 3, 6, 79, 2, 43, 7, 28, 11, 77, 84, 98]
 console.log(
   "Onder de 100?:",
   isBelow100([1, 81, 4, 53, 3, 6, 79, 2, 43, 7, 28, 101, 11, 77, 84, 98])
