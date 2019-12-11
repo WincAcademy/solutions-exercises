@@ -84,8 +84,8 @@ const tenfoldMap = function(array) {
     return number * 10;
   });
 };
-console.log(tenfold([1, 4, 3, 6, 9, 7, 11]));
-console.log(tenfoldMap([1, 4, 3, 6, 9, 7, 11]));
+console.log("tenfold", tenfold([1, 4, 3, 6, 9, 7, 11]));
+console.log("tenfold", tenfoldMap([1, 4, 3, 6, 9, 7, 11]));
 
 // result should be [10, 40, 30, 60, 90, 70, 110]
 
@@ -101,8 +101,8 @@ console.log(
   isBelow100([1, 81, 4, 53, 3, 6, 79, 2, 43, 7, 28, 101, 11, 77, 84, 98])
 );
 console.log(
-  "Onder de 100?:",
-  isBelow100([1, 81, 4, 53, 3, 6, 79, 2, 43, 7, 28, 101, 11, 77, 84, 98])
+  "Onder de 100, Should be true:",
+  isBelow100([1, 81, 4, 53, 3, 6, 79, 2, 43, 7, 28, 11, 77, 84, 98])
 );
 
 // G
@@ -113,4 +113,5 @@ const bigSum = function(array) {
     return acc + number;
   });
 };
-console.log(bigSum(numbers));
+console.log("Big sum, add all numbers in array:", bigSum([3, 4]));
+console.log("Big sum, add all numbers in array:", bigSum(numbers));

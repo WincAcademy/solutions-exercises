@@ -1,4 +1,15 @@
 // A
+
+const arrayWithWords = ["nice", "awesome", "tof"];
+
+const addTheWordCool = function(array) {
+  array.push("cool");
+  return array;
+};
+
+console.log("Add cool:", addTheWordCool(["nice", "awesome", "tof"]));
+
+// Alternate excercise A
 const isArray = function(input) {
   return Array.isArray(input);
 };
