@@ -43,7 +43,7 @@ console.log(doubleArrayValuesShortHand([4, 1, 1, 1, 4]));
 // C Is Bigger than 10
 const containsNumberBiggerThan10 = function(array) {
   return array.some(number => {
-    number > 10;
+    return number > 10;
   });
 };
 // Let op! Wanneer je van een functie verwacht dat deze True of False (een boolean) retourneert, is het gebruikelijk om er een werkwoord voor te zetten.
