@@ -55,9 +55,7 @@ console.log(
 
 // D
 function isItalyInTheGreat7(array) {
-  return array.includes(country => {
-    country === "Italy";
-  });
+  return array.includes("Italy");
 }
 console.log(
   "Is Italie aanwezig?:",
