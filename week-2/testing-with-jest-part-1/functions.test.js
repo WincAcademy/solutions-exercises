@@ -1,4 +1,4 @@
-const functions = require("./functions.js.js");
+const functions = require("./functions.js");
 
 // toBeNull
 test("Should be null", () => {
