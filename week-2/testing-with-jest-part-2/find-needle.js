@@ -1,5 +1,5 @@
 const findNeedle = function(words, wordToBeFound) {
-  return words.indexOf("needle");
+  return words.indexOf(wordToBeFound);
 };
 
 module.exports = findNeedle;

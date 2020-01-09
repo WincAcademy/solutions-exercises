@@ -1,7 +1,5 @@
 // A
 
-const arrayWithWords = ["nice", "awesome", "tof"];
-
 const addTheWordCool = function(array) {
   array.push("cool");
   return array;
