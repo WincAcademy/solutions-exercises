@@ -52,6 +52,6 @@ describe("Password verifier", () => {
         expect(test4.valid).toBe(true);
         
         const test5 = passwordVerifier('WincAcademy5');
-        expect(test5.valid).toBe(false);
+        expect(test5.valid).toBe(true);
     });
 });

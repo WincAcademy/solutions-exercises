@@ -5,14 +5,14 @@ const passwordVerifier = function(password) {
 
     // Voor elke requirement maken we een interne check
     const isNotBlank = s => !!s;
-    const isLessThan8Chars = s => s && s.length <= 8;
+    const isLessThan9Chars = s => s && s.length <= 8;
     const hasUppercase = s => s && /[A-Z]/.test(s);
     const hasLowercase = s => s && /[a-z]/.test(s);
     const hasDigit = s => s && /\d/.test(s);
 
     // Voor elke requirement die waar is, tel 1 punt op
     if(isNotBlank(password)) score++;
-    if(isLessThan8Chars(password)) score++;
+    if(isLessThan9Chars(password)) score++;
     if(hasUppercase(password)) score++;
     if(hasDigit(password)) score++;
     if(hasLowercase(password)) {
