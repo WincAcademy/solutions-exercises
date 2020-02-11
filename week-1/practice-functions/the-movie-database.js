@@ -18,7 +18,8 @@ const printMovie1 = function(movie) {
   const starsString = "Stars: ";
   for (let i = 0; i < movie.stars.length; i++) {
     starsString += movie.stars[i];
-    if (i != movie.stars.length - 1) {
+    // Uigebreide syntax: starsString = starsString + movie.stars[i]
+    if (i !== movie.stars.length - 1) {
       starsString += ", ";
     }
   }
