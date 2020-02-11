@@ -15,7 +15,7 @@ const myFavMovie = {
 // De oplossing met een for loop
 const printMovie1 = function(movie) {
   console.log(movie.title + " lasts for " + movie.duration + " minutes");
-  const starsString = "Stars: ";
+  let starsString = "Stars: ";
   for (let i = 0; i < movie.stars.length; i++) {
     starsString += movie.stars[i];
     // Uigebreide syntax: starsString = starsString + movie.stars[i]
