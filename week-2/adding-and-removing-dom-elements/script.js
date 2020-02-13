@@ -2,9 +2,9 @@ console.log("test of mijn javascript werkt");
 
 const animalSpotted = event => {
   console.log("spotted:", event.target.textContent);
-  const animalSpotted = event.target.textContent;
+  const spottedAnimal = event.target.textContent;
   const listItem = document.createElement("li");
-  listItem.appendChild(document.createTextNode(animalSpotted));
+  listItem.appendChild(document.createTextNode(spottedAnimal));
   const list = document.getElementById("spotted-animals-list");
   list.appendChild(listItem);
 };
@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
   animalButtons.forEach(function(animalButton) {
     animalButton.addEventListener("click", animalSpotted);
   });
+
   const removeFirstItemButton = document.getElementById(
     "remove-first-item-button"
   );
