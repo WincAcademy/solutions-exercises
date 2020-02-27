@@ -196,15 +196,15 @@ const allHeroes = heroes.map(hero => {
 });
 // next, use reduce to find the largest value
 const heaviestHero = allHeroes.reduce(
-  (maxValue, currentHero) => {
-    if (currentHero.weight > maxValue.weight) {
+  (currentHeaviestHero, currentHero) => {
+    if (currentHero.weight > currentHeaviestHero.weight) {
       return currentHero;
     } else {
-      return maxValue;
+      return currentHeaviestHero;
     }
   },
   allHeroes[0]
   // met deze laatste waarde geef je aan wat de initiele waarde moet zijn van de functie
 );
 
-console.log("Heaviest hero:", heaviestHero);
+console.log("Heaviest her0000o:", heaviestHero);
