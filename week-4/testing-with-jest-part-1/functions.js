@@ -1,5 +1,7 @@
 const functions = {
   isNull: function() {
+    console.log("hoi");
+
     return null;
   },
   checkValue: function(x) {
