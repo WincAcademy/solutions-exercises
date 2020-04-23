@@ -1,0 +1,38 @@
+body {
+  background-color: red;
+}
+@mixin square-blob() {
+  display: block;
+  max-width: 30rem;
+  min-height: 30rem;
+  margin: 5rem auto;
+  background: rebeccapurple;
+  position: relative;
+  border: 1px dashed rebeccapurple;
+}
+
+@mixin round-blob() {
+  display: block;
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  background: white;
+}
+.square-blob {
+  @include square-blob();
+  &__child-round-blob {
+    @include round-blob();
+    &--reversed {
+      @include round-blob();
+      background: rebeccapurple;
+    }
+  }
+  &--reversed {
+    @include square-blob();
+    background: white;
+  }
+}

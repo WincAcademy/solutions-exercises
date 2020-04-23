@@ -1,0 +1,48 @@
+.square-blob {
+  display: block;
+  max-width: 30rem;
+  min-height: 30rem;
+  margin: 5rem auto;
+  background: rebeccapurple;
+  position: relative;
+  border: 1px dashed rebeccapurple;
+}
+
+.square-blob__child-round-blob {
+  display: block;
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
+  background: white;
+}
+
+.square-blob__child-round-blob--reversed {
+  display: block;
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
+  background: white;
+  background: rebeccapurple;
+}
+
+.square-blob--reversed {
+  display: block;
+  max-width: 30rem;
+  min-height: 30rem;
+  margin: 5rem auto;
+  background: rebeccapurple;
+  position: relative;
+  border: 1px dashed rebeccapurple;
+  background: white;
+}
+/*# sourceMappingURL=styles.css.map */
