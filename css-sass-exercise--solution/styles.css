@@ -37,13 +37,14 @@ a {
 ul {
   list-style: none;
 }
+
 .title {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   text-transform: uppercase;
   letter-spacing: 1px;
   padding-bottom: 1em;
@@ -52,14 +53,14 @@ ul {
 .title__line {
   width: 3em;
   height: 1px;
-  background-color: #000;
+  background-color: #090b08;
   margin-right: 1em;
 }
 
 .btn {
   display: inline-block;
   padding: 0.5em 1.5em;
-  border: solid 1px #000;
+  border: solid 1px #090b08;
   -webkit-transition: all 0.3s ease-in;
   transition: all 0.3s ease-in;
 }
@@ -67,40 +68,12 @@ ul {
 .btn:hover,
 .btn:focus {
   -webkit-transform: translate(0px, -2px);
-  transform: translate(0px, -2px);
+          transform: translate(0px, -2px);
   -webkit-box-shadow: 0px 10px 7px -9px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 10px 7px -9px rgba(0, 0, 0, 0.75);
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
-form {
-  display: flex;
-}
-form input:first-child {
-  flex: 1 0 80%;
-  background-color: transparent;
-}
-form input:last-child {
-  flex: 1 0 20%;
-  border-left: 0;
-  cursor: pointer;
-  background-color: #c0eea9;
-  transition: all 0.25s ease;
-}
-#submit:hover {
-  background-color: #000;
-  color: #fff;
-  transition: all 0.25s ease;
-  -webkit-box-shadow: 0px 10px 7px -9px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0px 10px 7px -9px rgba(0, 0, 0, 0.75);
-  box-shadow: 0px 10px 7px -9px rgba(0, 0, 0, 0.75);
-}
-input {
-  padding: 10px;
-  border: 1px solid #000;
-}
-
-/* Pas alleen de onderstaande regels aan */
 
 form {
   display: -webkit-box;
@@ -110,15 +83,15 @@ form {
 
 form input:first-child {
   -webkit-box-flex: 1;
-  -ms-flex: 1 0 80%;
-  flex: 1 0 80%;
+      -ms-flex: 1 0 80%;
+          flex: 1 0 80%;
   background-color: transparent;
 }
 
 form input:last-child {
   -webkit-box-flex: 1;
-  -ms-flex: 1 0 20%;
-  flex: 1 0 20%;
+      -ms-flex: 1 0 20%;
+          flex: 1 0 20%;
   border-left: 0;
   cursor: pointer;
   background-color: #c0eea9;
@@ -127,7 +100,7 @@ form input:last-child {
 }
 
 #submit:hover {
-  background-color: #000;
+  background-color: #090b08;
   color: #fff;
   -webkit-transition: all 0.25s ease;
   transition: all 0.25s ease;
@@ -137,7 +110,7 @@ form input:last-child {
 
 input {
   padding: 10px;
-  border: 1px solid #000;
+  border: 1px solid #090b08;
 }
 
 /* Pas alleen de onderstaande regels aan */
@@ -147,13 +120,13 @@ input {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
-  justify-content: space-around;
+      justify-content: space-around;
   position: fixed;
   width: 100%;
   z-index: 1;
   padding: 20px;
   background-color: #c0eea9;
-  height: 120px;
+  height: 90px;
   -webkit-box-shadow: 0px 10px 7px -9px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 10px 7px -9px rgba(0, 0, 0, 0.75);
 }
@@ -164,6 +137,7 @@ input {
   height: 7.5em;
 }
 
+/* Pas alleen de CSS hieronder aan */
 /* Hero Section */
 .hero {
   padding: 20px;
@@ -172,8 +146,8 @@ input {
   display: flex;
   height: 100vh;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   background: #97d279;
 }
 
@@ -184,7 +158,9 @@ input {
 }
 
 .hero__text {
-  padding: 0 2em 7.5em;
+  max-width: 700px;
+  text-align: center;
+  padding-top: 1em;
 }
 
 /* Featured Section */
@@ -197,7 +173,7 @@ input {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .featured__image img {
@@ -225,16 +201,14 @@ input {
 .about__text {
   max-width: 700px;
   text-align: center;
-  padding: 20px;
-  -webkit-box-flex: 1;
-  -ms-flex: 1 0 40%;
-  flex: 1 0 40%;
+  padding-top: 1em;
 }
 
 .about__text p {
   text-align: justify;
   padding-bottom: 1em;
   line-height: 1.4em;
+  padding: 20px;
 }
 
 .about__wrapper {
@@ -248,11 +222,11 @@ input {
   padding-bottom: 33.25%;
   overflow: hidden;
   -ms-flex-item-align: center;
-  -ms-grid-row-align: center;
-  align-self: center;
+      -ms-grid-row-align: center;
+      align-self: center;
   -webkit-box-flex: 2;
-  -ms-flex: 2 0 55%;
-  flex: 2 0 55%;
+      -ms-flex: 2 0 55%;
+          flex: 2 0 55%;
   margin: 1.4em 0;
 }
 
@@ -274,7 +248,7 @@ input {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .contact__form-wrapper {

@@ -1,15 +1,12 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,500,700");
-
-// Variables
-$color-black: #090b08;
-$color-bright-green: #97d279;
+@import "./constants";
 
 body {
-  color: #090b08;
+  color: $color-black;
   margin: 0;
   font-family: "Raleway", sans-serif;
   font-weight: 300;
-  background-color: #ecffe9;
+  background-color: $color-light-green;
 }
 h1 {
   font-size: 1.7em;
@@ -31,7 +28,7 @@ h6 {
 }
 a {
   text-decoration: none;
-  color: #090b08;
+  color: $color-black;
 }
 ul {
   list-style: none;
@@ -47,14 +44,14 @@ ul {
 .title__line {
   width: 3em;
   height: 1px;
-  background-color: #000;
+  background-color: $color-black;
   margin-right: 1em;
 }
 
 .btn {
   display: inline-block;
   padding: 0.5em 1.5em;
-  border: solid 1px #000;
+  border: solid 1px $color-black;
   transition: all 0.3s ease-in;
 }
 .btn:hover,
@@ -76,12 +73,12 @@ form input:last-child {
   flex: 1 0 20%;
   border-left: 0;
   cursor: pointer;
-  background-color: #c0eea9;
+  background-color: $color-soft-green;
   transition: all 0.25s ease;
 }
 #submit:hover {
-  background-color: #000;
-  color: #fff;
+  background-color: $color-black;
+  color: $color-white;
   transition: all 0.25s ease;
   -webkit-box-shadow: 0px 10px 7px -9px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 10px 7px -9px rgba(0, 0, 0, 0.75);
@@ -89,7 +86,7 @@ form input:last-child {
 }
 input {
   padding: 10px;
-  border: 1px solid #000;
+  border: 1px solid $color-black;
 }
 
 /* Pas alleen de onderstaande regels aan */
@@ -101,9 +98,9 @@ input {
   position: fixed;
   width: 100%;
   z-index: 1;
-  padding: 20px;
-  background-color: #c0eea9;
-  height: 120px;
+  padding: $padding-standard;
+  background-color: $color-soft-green;
+  height: 90px;
   -webkit-box-shadow: 0px 10px 7px -9px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 10px 7px -9px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 10px 7px -9px rgba(0, 0, 0, 0.75);
@@ -117,26 +114,24 @@ input {
 
 /* Hero Section */
 .hero {
-  padding: 20px;
+  padding: $padding-standard;
   display: flex;
   height: 100vh;
   align-items: center;
-  background: #97d279;
+  background: $color-bright-green;
   &__img img {
     display: block;
     height: auto;
     width: 300px;
   }
   &__text {
-    max-width: 700px;
-    text-align: center;
-    padding-top: 1em;
+    @include standard-text();
   }
 }
 
 /* Featured Section */
 .featured {
-  padding: 20px;
+  padding: $padding-standard;
   &__wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -145,12 +140,10 @@ input {
     width: 300px;
   }
   &__text {
-    max-width: 700px;
-    text-align: center;
-    padding-top: 1em;
+    @include standard-text();
     & p {
       text-align: justify;
-      padding: 20px;
+      padding: $padding-standard;
       line-height: 1.4em;
     }
   }
@@ -159,16 +152,15 @@ input {
 /* About Section */
 
 .about {
-  background-color: #97d279;
-  padding: 20px;
+  background-color: $color-bright-green;
+  padding: $padding-standard;
   &__text {
-    max-width: 700px;
-    text-align: center;
-    padding-top: 1em;
+    @include standard-text();
     & p {
       text-align: justify;
       padding-bottom: 1em;
       line-height: 1.4em;
+      padding: $padding-standard;
     }
   }
   &__wrapper {
@@ -193,13 +185,13 @@ input {
 
 /* Contact Section */
 .contact {
-  padding: 20px;
+  padding: $padding-standard;
   &__wrapper {
     display: flex;
     flex-wrap: wrap;
   }
   &__form-wrapper {
-    padding: 20px;
+    padding: $padding-standard;
   }
 }
 
