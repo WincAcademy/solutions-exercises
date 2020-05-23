@@ -1,30 +1,5 @@
 const isAdult = person => person.age > 17;
 
-const convertExpirationDate = person => {
-  const expiration = person.credit_card.expiration.split("/");
-  const expirationYear = parseInt("20" + expiration[1]);
-  const expirationMonth = parseInt(expiration[0]) - 1; // Jan = 0, Dec = 11
-  const expirationDay = 1; // Default
-  person.credit_card.expiration_date = new Date(
-    expirationYear,
-    expirationMonth,
-    expirationDay
-  );
-  return person;
-};
-
-const cardExpiresInTheFuture = person =>
-  person.credit_card.expiration_date > new Date();
-
-const cardExpiresInOneYear = person => {
-  // We could make this function a single expression, but that's a little harder to read.
-  // Thanks Stack Overflow https://stackoverflow.com/a/29052008
-  const oneYearFromNow = new Date(
-    new Date().setFullYear(new Date().getFullYear() + 1)
-  );
-  return person.credit_card.expiration_date < oneYearFromNow;
-};
-
 // Convert person object to only necessary details for this job.
 const necessaryDetailsOnly = person => ({
   name: person.name,
@@ -35,14 +10,38 @@ const necessaryDetailsOnly = person => ({
   expiration_date: person.credit_card.expiration_date,
 });
 
+const convertExpirationDate = credit_card => {
+  const expiration = credit_card.expiration.split("/");
+  const expirationYear = parseInt("20" + expiration[1]);
+  const expirationMonth = parseInt(expiration[0]) - 1; // Jan = 0, Dec = 11
+  const expirationDay = 1; // Default
+  credit_card.expiration_date = new Date(
+    expirationYear,
+    expirationMonth,
+    expirationDay
+  );
+  return credit_card;
+};
+
+// Take out the expiration_date immediately.
+const cardExpiresInOneYear = ({ expiration_date }) => {
+  // Thanks Stack Overflow https://stackoverflow.com/a/29052008
+  const oneYearFromNow = new Date(
+    new Date().setFullYear(new Date().getFullYear() + 1)
+  );
+  const now = new Date();
+
+  return expiration_date > now && expiration_date < oneYearFromNow;
+};
+
 const getCreditCardsThatWillExpire = () => {
   const creditcards = randomPersonData
     .filter(isAdult)
+    .map(necessaryDetailsOnly)
     .map(convertExpirationDate)
-    .filter(cardExpiresInTheFuture)
-    .filter(cardExpiresInOneYear)
-    .map(necessaryDetailsOnly);
+    .filter(cardExpiresInOneYear);
 
+  // Earlier dates at the top.
   creditcards.sort(
     (card1, card2) => card1.expiration_date > card2.expiration_date
   );
@@ -74,8 +73,7 @@ const generateCCHTML = card => {
 };
 
 const displayOldCreditcardList = () => {
-  const resultList = document.querySelector("ul.results");
-
+  const resultList = document.querySelector(".results");
   resultList.innerHTML = "";
   getCreditCardsThatWillExpire()
     .map(generateCCHTML)
