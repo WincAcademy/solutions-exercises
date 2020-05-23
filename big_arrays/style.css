@@ -5,3 +5,31 @@ ul.results li span {
 .sub_buttons input:not([type="checkbox"]):not([type="radio"]) {
   display: inline;
 }
+
+.sub_buttons {
+  margin: 3em;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: lightskyblue;
+  border: 1px solid lightgrey;
+  width: 30%;
+  margin: 1em;
+  padding: 1.5em;
+  border-radius: 1em;
+}
+
+.card span {
+  display: block;
+}
+
+.card input {
+  margin-top: 1em;
+}
+
+.card.self {
+  background-color: pink;
+}
