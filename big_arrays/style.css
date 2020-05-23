@@ -2,6 +2,6 @@ ul.results li span {
   display: block;
 }
 
-.country_buttons input:not([type="checkbox"]):not([type="radio"]) {
+.sub_buttons input:not([type="checkbox"]):not([type="radio"]) {
   display: inline;
 }

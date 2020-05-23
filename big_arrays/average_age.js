@@ -39,7 +39,7 @@ const getCountryButtonHTML = country => {
 };
 
 const displayCountryButtons = countries => {
-  const country_buttons = document.querySelector(".country_buttons");
+  const country_buttons = document.querySelector(".sub_buttons");
   country_buttons.innerHTML = "";
 
   countries
