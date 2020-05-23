@@ -160,7 +160,9 @@ const getPeople = personData => {
       person.sign = getStarSign(person);
       return person;
     });
-  personData.sort((person1, person2) => person1.name < person2.name);
+  personData.sort((person1, person2) =>
+    sort_helper(person1.name < person2.name)
+  );
   return personData;
 };
 

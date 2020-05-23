@@ -22,8 +22,8 @@ const getCountriesWithAmountOfPeople = personData => {
   }));
 
   // Sort by most populous
-  countries.sort(
-    (country1, country2) => country1.inhabitants < country2.inhabitants
+  countries.sort((country1, country2) =>
+    sort_helper(country1.inhabitants < country2.inhabitants)
   );
   return countries;
 };

@@ -42,8 +42,8 @@ const getCreditCardsThatWillExpire = () => {
     .filter(cardExpiresInOneYear);
 
   // Earlier dates at the top.
-  creditcards.sort(
-    (card1, card2) => card1.expiration_date > card2.expiration_date
+  creditcards.sort((card1, card2) =>
+    sort_helper(card1.expiration_date > card2.expiration_date)
   );
 
   return creditcards;

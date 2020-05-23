@@ -21,7 +21,9 @@ const getCapricornWomen = personData => {
     .filter(isWoman)
     .filter(isOver30)
     .filter(isCapricorn);
-  capricorn_women.sort((woman1, woman2) => woman1.name > woman2.name);
+  capricorn_women.sort((woman1, woman2) =>
+    sort_helper(woman1.name > woman2.name)
+  );
   return capricorn_women;
 };
 
