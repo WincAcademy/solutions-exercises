@@ -1,3 +1,12 @@
+body {
+  font-size: 20px;
+}
+
+nav input {
+  font-size: 1.3em;
+  margin: 1em 1em 1em 0;
+}
+
 ul.results li span {
   display: block;
 }
@@ -7,17 +16,21 @@ ul.results li span {
 }
 
 .sub_buttons {
-  margin: 3em;
-  list-style: none;
   display: flex;
   flex-wrap: wrap;
+  padding-top: 1em;
 }
 
+.sub_buttons input,
+.sub_buttons .card {
+  margin: 1em 1em 1em 0;
+}
 .card {
   background-color: lightskyblue;
   border: 1px solid lightgrey;
-  width: 30%;
-  margin: 1em;
+  width: 120px;
+  text-overflow: ellipsis;
+
   padding: 1.5em;
   border-radius: 1em;
 }
