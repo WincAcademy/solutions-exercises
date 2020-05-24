@@ -22,12 +22,11 @@ const displayAverageAgeForCountry = () => {
   const country = event.target.value;
   const average_age = calculateAverageAgeForCountry(randomPersonData, country);
 
-  const resultList = document.querySelector(".results");
-  resultList.innerHTML = "";
+  emptyResultList();
 
   const li = document.createElement("li");
   li.innerHTML = `The average age for ${country} is ${average_age}`;
-  resultList.appendChild(li);
+  addToResultList(li);
 };
 
 const getCountryButtonHTML = country => {
@@ -38,20 +37,11 @@ const getCountryButtonHTML = country => {
   return button;
 };
 
-const displayCountryButtons = countries => {
-  const country_buttons = document.querySelector(".sub_buttons");
-  country_buttons.innerHTML = "";
-
-  countries
-    .map(getCountryButtonHTML)
-    .forEach(countryButtonHTML =>
-      country_buttons.appendChild(countryButtonHTML)
-    );
-};
-
 const displayAverageAgeButtons = () => {
+  emptyUI();
+
   const countries = getCountries(randomPersonData);
-  displayCountryButtons(countries);
+  countries.map(getCountryButtonHTML).forEach(addToButtonList);
 };
 
 document

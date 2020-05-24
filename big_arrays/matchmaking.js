@@ -142,11 +142,9 @@ const getPersonCardHTML = ({
 };
 
 const displayPeople = people => {
-  const people_buttons = document.querySelector(".sub_buttons");
-  people_buttons.innerHTML = "";
-  people
-    .map(getPersonCardHTML)
-    .forEach(personCardHTML => people_buttons.appendChild(personCardHTML));
+  emptyResultList();
+  emptyButtonList();
+  people.map(getPersonCardHTML).forEach(addToButtonList);
 };
 
 const getPeople = personData => {
@@ -167,6 +165,7 @@ const getPeople = personData => {
 };
 
 const matchMaking = () => {
+  emptyUI();
   const people = getPeople(randomPersonData);
   displayPeople(people);
 };

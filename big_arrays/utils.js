@@ -9,3 +9,20 @@ const sort_helper = result => {
     return -1;
   }
 };
+
+const emptyResultList = () =>
+  (document.querySelector(".results").innerHTML = "");
+
+const addToResultList = li =>
+  document.querySelector(".results").appendChild(li);
+
+const emptyButtonList = () =>
+  (document.querySelector(".sub_buttons").innerHTML = "");
+
+const addToButtonList = button =>
+  document.querySelector(".sub_buttons").appendChild(button);
+
+const emptyUI = () => {
+  emptyResultList();
+  emptyButtonList();
+};

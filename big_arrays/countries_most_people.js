@@ -36,12 +36,9 @@ const generateCountryAndInhabitantsHTML = ({ country, inhabitants }) => {
 };
 
 const displayCountriesSortedByPeople = () => {
-  const resultList = document.querySelector(".results");
-  resultList.innerHTML = "";
+  emptyUI();
   const countries = getCountriesWithAmountOfPeople(randomPersonData);
-  countries
-    .map(generateCountryAndInhabitantsHTML)
-    .forEach(li => resultList.appendChild(li));
+  countries.map(generateCountryAndInhabitantsHTML).forEach(addToResultList);
 };
 
 document

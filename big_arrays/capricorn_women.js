@@ -57,13 +57,10 @@ const generateCapricornWomanHTML = ({
 };
 
 const displayCapricornWomen = () => {
-  const resultList = document.querySelector(".results");
-  resultList.innerHTML = "";
+  emptyUI();
 
   const capricorn_women = getCapricornWomen(randomPersonData);
-  capricorn_women
-    .map(generateCapricornWomanHTML)
-    .forEach(li => resultList.appendChild(li));
+  capricorn_women.map(generateCapricornWomanHTML).forEach(addToResultList);
 };
 
 document

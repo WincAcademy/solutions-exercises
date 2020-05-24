@@ -18,10 +18,9 @@ const generateCountryHTML = country => {
 };
 
 const displayCountries = () => {
-  const resultList = document.querySelector(".results");
-  resultList.innerHTML = "";
+  emptyUI();
   const countries = getCountries(randomPersonData);
-  countries.map(generateCountryHTML).forEach(li => resultList.appendChild(li));
+  countries.map(generateCountryHTML).forEach(addToResultList);
 };
 
 document
