@@ -1,6 +1,7 @@
 const getCountriesWithAmountOfPeople = personData => {
-  let countries = {};
+  // A large part of this function could be a big reduce call.
 
+  let countries = {};
   // Count amount of people per country
   // Unpack immediately
   personData.forEach(({ region }) => {
@@ -12,10 +13,8 @@ const getCountriesWithAmountOfPeople = personData => {
   });
 
   // So now we have an object with keys country and values amount of people.
-  // Convert into an array of objects so we can sort.
+  // Convert into array of objects with country name and amount of people, so we can sort.
   countries = Object.entries(countries);
-
-  // Convert into array of objects with country name and amount of people.
   countries = countries.map(country => ({
     country: country[0],
     inhabitants: country[1],
@@ -35,11 +34,10 @@ const generateCountryAndInhabitantsHTML = ({ country, inhabitants }) => {
   return li;
 };
 
-const displayCountriesSortedByPeople = () => {
-  emptyUI();
-  const countries = getCountriesWithAmountOfPeople(randomPersonData);
-  countries.map(generateCountryAndInhabitantsHTML).forEach(addToResultList);
-};
+const displayCountriesSortedByPeople = () =>
+  getCountriesWithAmountOfPeople(randomPersonData)
+    .map(generateCountryAndInhabitantsHTML)
+    .forEach(addToResultList);
 
 document
   .querySelector(".countries_most_people")

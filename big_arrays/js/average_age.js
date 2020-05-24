@@ -1,4 +1,6 @@
-const calculateAverageAgeForCountry = (randomPersonData, country) => {
+// Using globals here, not that nice.
+// We could fix this with a curried function. https://javascript.info/currying-partials
+const calculateAverageAgeForCountry = country => {
   const peopleFromCountry = randomPersonData.filter(
     person => person.region === country
   );
@@ -19,11 +21,10 @@ const calculateAverageAgeForCountry = (randomPersonData, country) => {
 };
 
 const displayAverageAgeForCountry = () => {
-  const country = event.target.value;
-  const average_age = calculateAverageAgeForCountry(randomPersonData, country);
-
   emptyResultList();
 
+  const country = event.target.value;
+  const average_age = calculateAverageAgeForCountry(country);
   const li = document.createElement("li");
   li.innerHTML = `The average age for ${country} is ${average_age}`;
   addToResultList(li);
@@ -37,12 +38,10 @@ const getCountryButtonHTML = country => {
   return button;
 };
 
-const displayAverageAgeButtons = () => {
-  emptyUI();
-
-  const countries = getCountries(randomPersonData);
-  countries.map(getCountryButtonHTML).forEach(addToButtonList);
-};
+const displayAverageAgeButtons = () =>
+  getCountries(randomPersonData)
+    .map(getCountryButtonHTML)
+    .forEach(addToButtonList);
 
 document
   .querySelector(".average_age")

@@ -2,30 +2,18 @@ const isWoman = person => person.gender === "female";
 
 const isOver30 = person => person.age > 30;
 
-const isCapricorn = ({ birthday }) => {
-  const birthMonth = parseInt(birthday.dmy.split("/")[1]);
-  const birthDay = parseInt(birthday.dmy.split("/")[0]);
-  if (birthMonth === 12 && birthDay >= 22) {
-    return true;
-  }
+const isCapricorn = person => person.sign === CAPRICORN;
 
-  if (birthMonth === 1 && birthDay <= 19) {
-    return true;
-  }
+const sortByName = (person1, person2) =>
+  sort_helper(person1.name > person2.name);
 
-  return false;
-};
-
-const getCapricornWomen = personData => {
-  const capricorn_women = personData
+const getCapricornWomen = personData =>
+  personData
     .filter(isWoman)
     .filter(isOver30)
-    .filter(isCapricorn);
-  capricorn_women.sort((woman1, woman2) =>
-    sort_helper(woman1.name > woman2.name)
-  );
-  return capricorn_women;
-};
+    .map(addStarSign)
+    .filter(isCapricorn)
+    .sort(sortByName);
 
 const generateCapricornWomanHTML = ({
   name,
@@ -34,7 +22,7 @@ const generateCapricornWomanHTML = ({
   age,
   birthday,
 }) => {
-  // I've added age and birthday to make manual checking easier.
+  // Add age and birthday to make manual checking easier.
   const nameSpan = document.createElement("span");
   nameSpan.innerHTML = `${name} ${surname}`;
 
@@ -57,10 +45,9 @@ const generateCapricornWomanHTML = ({
 };
 
 const displayCapricornWomen = () => {
-  emptyUI();
-
-  const capricorn_women = getCapricornWomen(randomPersonData);
-  capricorn_women.map(generateCapricornWomanHTML).forEach(addToResultList);
+  getCapricornWomen(randomPersonData)
+    .map(generateCapricornWomanHTML)
+    .forEach(addToResultList);
 };
 
 document
