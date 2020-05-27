@@ -1,0 +1,35 @@
+button {
+  display: block;
+  font-size: 6em;
+  padding: 10px;
+  width: 600px;
+  margin: 0 auto;
+}
+
+div.promises {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.promises div {
+  padding: 10px;
+  margin: 10px;
+  font-size: 20px;
+  background-color: lightblue;
+}
+
+ul {
+  list-style: none;
+}
+
+div.pending {
+  background-color: lightblue;
+}
+
+div.resolved {
+  background-color: green;
+}
+
+div.errored {
+  background-color: red;
+}

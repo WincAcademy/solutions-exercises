@@ -6,9 +6,9 @@ const ikRockArrowFunctions = () => {
 ikRockArrowFunctions();
 
 // Opdracht B
-const arrowFunction = () => console.log("Joe, ik rock de arrow functions!");
+const fivePlusSeven = () => 5 + 7;
 
-arrowFunction();
+fivePlusSeven();
 
 // Opdracht C
 () => 1 + 2;
