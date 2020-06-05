@@ -1,0 +1,69 @@
+.container {
+  display: flex;
+}
+
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  background-color: lightblue;
+  list-style: none;
+  margin: 5px;
+  color: black;
+}
+
+.button-primary,
+.input-primary {
+  width: 200px;
+  color: black;
+  padding: 14px 20px;
+  margin: 20px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: lightgray;
+  margin-left: 10px;
+}
+.groceries-input input {
+  background-color: white;
+}
+.groceries-input input {
+  border: 1px solid lightgray;
+}
+
+.groceries-list {
+  width: 50%;
+  padding: 20px;
+}
+.groceries-list ul {
+  padding: 0;
+}
+.app {
+  text-align: center;
+}
+
+.groceries-header {
+  background-color: #282c34;
+  min-height: 30vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.basket .list-item {
+  background: lightblue;
+}
+
+.basket .list-item:nth-child(even) {
+  background: lightcyan;
+}
+
+.groceries .list-item {
+  background: lightpink;
+}
+.groceries .list-item:nth-child(odd) {
+  background: lightcoral;
+}
