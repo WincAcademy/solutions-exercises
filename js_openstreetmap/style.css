@@ -1,0 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#map,
+input {
+  margin: 2em;
+}
+
+#map {
+  height: 80vh;
+  width: 80vh;
+}
