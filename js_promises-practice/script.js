@@ -14,9 +14,9 @@ const getFailingPromise = (errorMessage, ms) => {
 
 const getRandomSucceedingOrFailingPromise = id => {
   // This randomly resolves to true or false
-  let promiseShouldSucceed = Math.random() > 0.5;
+  const promiseShouldSucceed = Math.random() > 0.5;
   // This gets some semi-random amound of seconds under the 5seconds:
-  let randomMillisecond = Math.round(Math.random() * 5000);
+  const randomMillisecond = Math.round(Math.random() * 5000);
   if (promiseShouldSucceed) {
     return getSucceedingPromise(
       `Promise ${id} succeeded in ${randomMillisecond} ms.`,
@@ -44,25 +44,8 @@ const showPromises = promises => {
   promisesElements.forEach(element => promisesDiv.appendChild(element));
 };
 
-const add50Promises = () => {
-  let i = 0;
-  const allPromises = [];
-  // fill the allPromises array with 50 pending promises;
-  while (i <= 50) {
-    let id = i;
-    allPromises.push({
-      // state: "pending",
-      id
-    });
-    consumePromise(allPromises, id);
-    i++;
-  }
-  showPromises(allPromises);
-};
-
-const consumePromise = function(allPromises, id) {
+const consumePromise = (id, allPromises) => {
   const promise = getRandomSucceedingOrFailingPromise(id);
-  console.log(promise);
   promise
     .then(resolved => {
       console.log(`msg: ${resolved}`);
@@ -79,10 +62,18 @@ const consumePromise = function(allPromises, id) {
     });
 };
 
-const registerEventHandlers = () => {
-  document.querySelector("button").addEventListener("click", add50Promises);
+const add50Promises = () => {
+  let i = 0;
+  const allPromises = [];
+  // fill the allPromises array with 50 pending promises;
+  while (i <= 50) {
+    let id = i;
+    allPromises.push({
+      id,
+    });
+    consumePromise(id, allPromises);
+    i++;
+  }
 };
 
-document.addEventListener("DOMContentLoaded", () => {
-  registerEventHandlers();
-});
+document.querySelector("button").addEventListener("click", add50Promises);
