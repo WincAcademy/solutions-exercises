@@ -5,8 +5,6 @@ const clearMap = () => {
 
 const renderMap = () => {
   const ACCESS_TOKEN = document.querySelector("input").value;
-  console.log(ACCESS_TOKEN);
-  // "pk.eyJ1IjoibmllbHNib20iLCJhIjoiY2tjMzY3aTVuMHoxbzJ6bGtwOTZxc2RvMyJ9.uEckzD003QeLwVqHfQAHDQ";
   const lat = 52.08;
   const lon = 4.603;
 
