@@ -1,0 +1,199 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,500,700");
+@import "./constants";
+
+body {
+  color: $color-black;
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+  background-color: $color-light-green;
+}
+h1 {
+  font-size: 1.7em;
+  font-weight: 700;
+  line-height: 1.5em;
+  text-transform: uppercase;
+}
+h2 {
+  text-transform: uppercase;
+}
+h4 {
+  font-size: 0.8em;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+h6 {
+  font-weight: 500;
+}
+a {
+  text-decoration: none;
+  color: $color-black;
+}
+ul {
+  list-style: none;
+}
+.title {
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding-bottom: 1em;
+}
+
+.title__line {
+  width: 3em;
+  height: 1px;
+  background-color: $color-black;
+  margin-right: 1em;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.5em 1.5em;
+  border: solid 1px $color-black;
+  transition: all 0.3s ease-in;
+}
+.btn:hover,
+.btn:focus {
+  transform: translate(0px, -2px);
+  -webkit-box-shadow: 0px 10px 7px -9px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 10px 7px -9px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 10px 7px -9px rgba(0, 0, 0, 0.75);
+  transition: all 0.3s ease-out;
+}
+form {
+  display: flex;
+}
+form input:first-child {
+  flex: 1 0 80%;
+  background-color: transparent;
+}
+form input:last-child {
+  flex: 1 0 20%;
+  border-left: 0;
+  cursor: pointer;
+  background-color: $color-soft-green;
+  transition: all 0.25s ease;
+}
+#submit:hover {
+  background-color: $color-black;
+  color: $color-white;
+  transition: all 0.25s ease;
+  -webkit-box-shadow: 0px 10px 7px -9px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 10px 7px -9px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 10px 7px -9px rgba(0, 0, 0, 0.75);
+}
+input {
+  padding: 10px;
+  border: 1px solid $color-black;
+}
+
+/* Pas alleen de onderstaande regels aan */
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-around;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  padding: $padding-standard;
+  background-color: $color-soft-green;
+  height: 90px;
+  -webkit-box-shadow: 0px 10px 7px -9px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 10px 7px -9px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 10px 7px -9px rgba(0, 0, 0, 0.75);
+  &__brand-logo img {
+    width: auto;
+    padding-top: 20px;
+    height: 7.5em;
+  }
+}
+
+/* Hero Section */
+.hero {
+  padding: $padding-standard;
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  background: $color-bright-green;
+  &__img img {
+    display: block;
+    height: auto;
+    width: 300px;
+  }
+  &__text {
+    @include standard-text();
+  }
+}
+
+/* Featured Section */
+.featured {
+  padding: $padding-standard;
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__image img {
+    width: 300px;
+  }
+  &__text {
+    @include standard-text();
+    & p {
+      text-align: justify;
+      padding: $padding-standard;
+      line-height: 1.4em;
+    }
+  }
+}
+
+/* About Section */
+
+.about {
+  background-color: $color-bright-green;
+  padding: $padding-standard;
+  &__text {
+    @include standard-text();
+    & p {
+      text-align: justify;
+      padding-bottom: 1em;
+      line-height: 1.4em;
+      padding: $padding-standard;
+    }
+  }
+  &__wrapper {
+    display: flex;
+  }
+  &__video-wrapper {
+    position: relative;
+    padding-bottom: 33.25%;
+    overflow: hidden;
+    align-self: center;
+    flex: 2 0 55%;
+    margin: 1.4em 0;
+    & iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+/* Contact Section */
+.contact {
+  padding: $padding-standard;
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__form-wrapper {
+    padding: $padding-standard;
+  }
+}
+
+.copy {
+  padding-left: 20px;
+}

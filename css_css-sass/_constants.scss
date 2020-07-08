@@ -1,0 +1,13 @@
+// Variables
+$color-black: #090b08;
+$color-white: #fff;
+$color-bright-green: #97d279;
+$color-light-green: #ecffe9;
+$color-soft-green: #c0eea9;
+$padding-standard: 20px;
+
+@mixin standard-text {
+  max-width: 700px;
+  text-align: center;
+  padding-top: 1em;
+}
