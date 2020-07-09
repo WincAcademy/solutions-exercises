@@ -1,32 +1,43 @@
-const passwordVerifier = function(password) {
-    
-    // We tellen het aantal requirements waar het wachtwoord aan moet voldoen
-    let score = 0;
+// Utility functions
+const isNotNull = str => str !== null;
 
-    // Voor elke requirement maken we een interne check
-    const isNotBlank = s => !!s;
-    const isLessThan8Chars = s => s && s.length <= 8;
-    const hasUppercase = s => s && /[A-Z]/.test(s);
-    const hasLowercase = s => s && /[a-z]/.test(s);
-    const hasDigit = s => s && /\d/.test(s);
+const hasRightLength = str => isNotNull(str) && str.length <= 8;
 
-    // Voor elke requirement die waar is, tel 1 punt op
-    if(isNotBlank(password)) score++;
-    if(isLessThan8Chars(password)) score++;
-    if(hasUppercase(password)) score++;
-    if(hasDigit(password)) score++;
-    if(hasLowercase(password)) {
-        score++;
-    } else {
-        // Voor deze requirement maken een uitzondering; reset de score als hier niet aan wordt voldaan
-        score = 0;
-    }
+const hasUpperCaseCharacter = str =>
+    isNotNull(str) && str.toLowerCase() !== str;
 
-    // Markeer het wachtwoord als valide als er een score van minimaal 3 is
-    return {
-        score: score,
-        valid: score >= 3
-    };
-}
+const hasLowerCaseCharacter = str =>
+    isNotNull(str) && str.toUpperCase() !== str;
 
-module.exports = passwordVerifier;
+const hasDigit = str => /\d/.test(str);
+
+const minimumConditionsReached = conditions => {
+    // conditions is an array of booleans
+    trueConditions = conditions.filter(bool => bool);
+    return trueConditions.length >= 3;
+};
+
+// "Outer" function
+const verifyPassword = password => {
+    const conditions = [
+        isNotNull(password),
+        hasRightLength(password),
+        hasUpperCaseCharacter(password),
+        hasLowerCaseCharacter(password),
+        hasDigit(password)
+    ];
+    const result =
+        minimumConditionsReached(conditions) && hasLowerCaseCharacter(password);
+
+    return result;
+};
+
+module.exports = {
+    verifyPassword,
+    hasRightLength,
+    isNotNull,
+    hasUpperCaseCharacter,
+    hasLowerCaseCharacter,
+    hasDigit,
+    minimumConditionsReached
+};
