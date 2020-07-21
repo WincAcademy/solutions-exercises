@@ -2,11 +2,11 @@ import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-import Home from "./Home";
-import Calendar from "./Calendar";
-import Day from "./Day";
+import Home from "../views/Home";
+import Calendar from "../views/Calendar";
+import Day from "../views/Day";
 
-import generateRandomAppointments from "./utils";
+import generateRandomAppointments from "../utils/utils";
 
 const appointments = generateRandomAppointments(70);
 
