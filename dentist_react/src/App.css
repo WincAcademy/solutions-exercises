@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 4rem;
+  background-color: lightslategray;
+}
+
+nav li {
+  display: inline-block;
+  list-style: none;
+  margin-right: 4rem;
+}
+
+nav {
+  margin-bottom: 4rem;
+  font-size: 2rem;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: greenyellow;
+}
+
+a,
+a:focus,
+a:visited {
+  color: darksalmon;
+  outline: none;
+}

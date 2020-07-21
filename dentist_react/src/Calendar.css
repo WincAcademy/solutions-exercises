@@ -1,0 +1,35 @@
+.calendarview .header,
+.calendarview .table {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.calendarview .header {
+  background-color: aquamarine;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.calendarview .header div {
+  padding: 0.5rem;
+}
+
+.calendarview {
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.calendarview .day {
+  margin-bottom: 0.5rem;
+  border: 1px solid lightblue;
+  padding: 0.5rem;
+  background-color: lightyellow;
+}
+
+.calendarview .patient {
+  margin-left: 0.5rem;
+}
+
+.calendarview .time {
+  color: yellowgreen;
+}
