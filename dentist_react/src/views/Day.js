@@ -2,7 +2,7 @@ import React from "react";
 import "./Day.css";
 import AppointmentInDay from "./AppointmentInDay";
 
-export default ({ appointments }) => {
+const Day = ({ appointments }) => {
   const appointmentsJSX = appointments.map(
     ({ time, patient, dentist, assistant }, index) => (
       <AppointmentInDay
@@ -16,3 +16,5 @@ export default ({ appointments }) => {
   );
   return <ul className="dayview">{appointmentsJSX}</ul>;
 };
+
+export default Day;
