@@ -14,6 +14,8 @@ const getRandomFirstName = () => getRandomPerson().name;
 
 const getRandomSurname = () => getRandomPerson().surname;
 
+const getRandomId = () => getRandomInteger(1, 1000000);
+
 const getRandomDomain = () =>
   getRandomItem([
     "gmail.com",
@@ -34,7 +36,7 @@ const generatePerson = () => ({
   name: getRandomFirstName(),
   surname: getRandomSurname(),
   phone: getRandomPhone(),
-  id: getRandomInteger(1, 1000000),
+  id: getRandomId(),
 });
 
 const namesToEmailPart = ({ name, surname }) =>
@@ -61,6 +63,7 @@ const generatePatient = () => {
 
 const generateRandomAppointment = ({ dentists, assistants, patients }) => {
   const appointment = {
+    id: getRandomId(),
     dentist: getRandomItem(dentists).id,
     patient: getRandomItem(patients).id,
     day: getRandomDay(),
