@@ -11,13 +11,10 @@ const fivePlusSeven = () => 5 + 7;
 fivePlusSeven();
 
 // Opdracht C
-() => 1 + 2;
-
-// Opdracht D
 const myFunction = (a, b) => a + b;
 
-// Opdracht E
+// Opdracht D
 const addFive = a => a + 5;
 
-// Opdracht F
+// Opdracht E
 const createObject = () => ({ value: "hoi" });
