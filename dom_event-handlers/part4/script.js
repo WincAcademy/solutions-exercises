@@ -5,7 +5,7 @@ const toggleClassBlueBackground = function () {
 const attachEventToChangeColorButton = function () {
   const changeColorButton = document.getElementById("change-background-button");
   changeColorButton.addEventListener("click", function () {
-    changeClassBlueBackground();
+    toggleClassBlueBackground();
   });
 };
 const attachEventToAlertButton = function () {
