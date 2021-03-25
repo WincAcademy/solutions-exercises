@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: light-grey;
+    padding: 2rem;
+}
+
+main {
+    padding-top: 1rem;
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+}
+
+footer {
+    margin-top: 4rem;
+}
+
+h1,
+h2 {
+    margin: 1rem 0 1rem;
+}
+
+a {
+    color: inherit;
+}
+
+.day>* {
+    margin-bottom: 1em;
+}
+
+.next_and_prev a,
+.day_link {
+    display: inline-block;
+    margin-right: 1em;
+}
+
+.day_link a {
+    text-decoration: none;
+}
+
+.day1 {
+    color: yellow;
+}
+
+.day2 {
+    color: pink;
+}
+
+.day3 {
+    color: green;
+}
+
+.day4 {
+    color: orange;
+}
+
+.day5 {
+    color: lightblue;
+}
+
+.day6 {
+    color: purple;
+}
+
+.day7 {
+    color: red;
+}
