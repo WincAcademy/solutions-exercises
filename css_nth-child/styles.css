@@ -1,0 +1,47 @@
+body {
+  padding: 1em 2em;
+  font-family: sans-serif;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+}
+li {
+  text-align: center;
+  line-height: 2;
+  background: slategrey;
+}
+div {
+  width: 12em;
+  float: left;
+  margin-right: 2em;
+}
+hr {
+  clear: both;
+  padding-top: 1em;
+  border: 0;
+  border-bottom: 1px solid grey;
+}
+
+/* maak je selectors hier. Gebruik het volgende achtergrondkleur: lightsteelblue; */
+/* hints: https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-child */
+
+div:before {
+  font-family: monospace;
+  white-space: nowrap;
+  font-size: 12px;
+}
+
+.one * li:nth-child(1) {
+  background-color: lightsteelblue;
+}
+
+.two *:nth-child(2) li:nth-child(3) {
+  background-color: lightsteelblue;
+}
+
+.three ul:nth-child(odd) li:nth-child(-n + 3) {
+  background-color: lightsteelblue;
+}
