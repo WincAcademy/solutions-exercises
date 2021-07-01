@@ -1,7 +1,10 @@
+body {
+  font-family: sans-serif;
+}
+
 main {
   display: flex;
   align-items: flex-start;
-  font: arial;
   font-size: 18px;
 }
 
@@ -14,9 +17,18 @@ article {
 }
 article div {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   margin-left: 15px;
+}
+.card-heading {
+  margin-top: 15px;
+}
+.card-heading p {
+  margin: 10px 0 0;
+}
+.card-heading h2 {
+  margin: 0;
 }
 .card-subtitle {
   color: grey;
@@ -52,6 +64,7 @@ button {
 }
 .green-button {
   border-left: 1.5px solid limegreen;
+  border-right: none;
   border-top: 1.5px solid limegreen;
   border-bottom: 1.5px solid limegreen;
   border-bottom-left-radius: 5px;
@@ -64,4 +77,8 @@ button {
   border-bottom-right-radius: 5px;
   border-top-right-radius: 5px;
   color: red;
+}
+button:hover {
+  cursor: pointer;
+  background-color: #f8f8f8;
 }
