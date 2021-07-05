@@ -15,8 +15,8 @@ h1 {
   width: 505px;
 }
 
-h1:before,
-h1:after {
+h1::before,
+h1::after {
   background: #4a90e2;
   content: "";
   display: block;
@@ -25,7 +25,7 @@ h1:after {
   width: 25px;
 }
 
-h1:before {
+h1::before {
   left: 0;
   top: 9px;
   border-radius: 90px 0 0 90px;
@@ -33,7 +33,7 @@ h1:before {
   -webkit-border-radius: 90px 0 0 90px;
 }
 
-h1:after {
+h1::after {
   right: 0;
   top: 9px;
   border-radius: 0 90px 90px 0;
