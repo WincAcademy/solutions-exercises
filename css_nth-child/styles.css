@@ -28,7 +28,7 @@ hr {
 /* maak je selectors hier. Gebruik het volgende achtergrondkleur: lightsteelblue; */
 /* hints: https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-child */
 
-div:before {
+div::before {
   font-family: monospace;
   white-space: nowrap;
   font-size: 12px;
