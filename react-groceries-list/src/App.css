@@ -1,69 +1,71 @@
-.container {
-  display: flex;
-}
-
-.list-item {
-  display: flex;
-  justify-content: space-between;
-  padding: 15px;
-  background-color: lightblue;
-  list-style: none;
-  margin: 5px;
-  color: black;
-}
-
-.button-primary,
-.input-primary {
-  width: 200px;
-  color: black;
-  padding: 14px 20px;
-  margin: 20px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  background-color: lightgray;
-  margin-left: 10px;
-}
-.groceries-input input {
-  background-color: white;
-}
-.groceries-input input {
-  border: 1px solid lightgray;
-}
-
-.groceries-list {
-  width: 50%;
-  padding: 20px;
-}
-.groceries-list ul {
-  padding: 0;
-}
-.app {
+.App {
   text-align: center;
 }
 
-.groceries-header {
-  background-color: #282c34;
-  min-height: 30vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+header {
+  height: 25vh;
   color: white;
+  background-color: #252525;
+  display: grid;
+  place-items: center;
 }
 
-.basket .list-item {
-  background: lightblue;
+main {
+  display: flex;
 }
 
-.basket .list-item:nth-child(even) {
-  background: lightcyan;
+.grocery-list,
+.shopping-cart {
+  flex: 1;
+  margin: 1em;
 }
 
-.groceries .list-item {
-  background: lightpink;
+ul.app-list {
+  list-style: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: start;
 }
-.groceries .list-item:nth-child(odd) {
-  background: lightcoral;
+
+ul.app-list li {
+  padding: 0.5em;
+  margin: 2px;
+  background-color: rgb(235, 165, 165);
+}
+
+ul.app-list li:nth-child(2n + 1) {
+  background-color: rgb(199, 118, 118);
+}
+
+.shopping-cart ul.app-list li {
+  background-color: rgb(165, 181, 235);
+}
+
+.shopping-cart ul.app-list li:nth-child(2n + 1) {
+  background-color: rgb(127, 142, 190);
+}
+
+button {
+  padding: 0.5em;
+  margin: 0.5em;
+}
+
+.input-field {
+  display: flex;
+  align-items: center;
+}
+
+.input-field input {
+  flex-grow: 1;
+  padding: 0.5em;
+}
+
+.input-field button {
+  width: 25%;
+}
+
+.shopping-cart .list-item {
+  display: flex;
+  justify-content: space-between;
 }

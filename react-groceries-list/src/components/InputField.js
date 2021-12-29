@@ -1,40 +1,28 @@
-import React from "react";
+import { useState } from "react";
 
-class InputField extends React.Component {
-  state = {
-    input: ""
-  };
+function InputField({ onSubmit }) {
+  const [inputValue, setInputValue] = useState("");
 
-  render() {
-    const onInput = event => {
-      this.setState({
-        input: event.target.value
-      });
-    };
-
-    const onSubmit = e => {
-      e.preventDefault();
-      this.props.onSubmit(this.state.input);
-      this.setState({
-        input: ""
-      });
-    };
-
-    return (
-      <form className="groceries-input" onSubmit={onSubmit}>
-        <input
-          placeholder="Vul je boodschappen in"
-          type="search"
-          onChange={onInput}
-          value={this.state.input}
-          className="input-primary"
-        ></input>
-        <button className="button-primary" type="submit">
-          Voeg toe
-        </button>
-      </form>
-    );
+  function onButtonPress() {
+    if (inputValue.length > 0) {
+      console.log(`Submitting ${inputValue}`);
+      onSubmit(inputValue);
+      setInputValue("");
+    }
   }
+
+  return (
+    <div className="input-field">
+      <input
+        type="text"
+        value={inputValue}
+        onChange={(e) => setInputValue(e.target.value)}
+      />
+      <button onClick={onButtonPress} placeholder="Add a grocery item">
+        Add
+      </button>
+    </div>
+  );
 }
 
 export default InputField;
