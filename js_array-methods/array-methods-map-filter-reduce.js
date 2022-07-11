@@ -144,7 +144,7 @@ console.log(heavySuperHeroNamesChained);
 // 4 Maak een array met alle comics waar de superhelden hun "first apprearances" hebben gehad
 // Deze is gemaakt met een implicit return statement (oftwel een one-liner)
 const firstAppearance = heroes.map(hero => hero.first_appearance);
-console.log("firest appearance:", firstAppearance);
+console.log("first appearance:", firstAppearance);
 
 // 5 Maak een array met alle superhelden van DC Comics en een array met alle superhelden van Marvel Comics
 // Deze is gemaakt met een implicit return statement (oftwel een one-liner)
