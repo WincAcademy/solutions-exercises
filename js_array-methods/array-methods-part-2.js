@@ -106,7 +106,7 @@ console.log(
 );
 
 // G
-const numbers = [1, 81, 4, 53, 3, 6, 11, 77, 84, 98, 101, 206, 234];
+const numbers = [1, 81, 4, 53, 3, 6, 79, 2, 43, 7, 28, 11, 77, 84, 98, 101, 206, 234];
 
 const bigSum = function (array) {
   return array.reduce((acc, number) => {
