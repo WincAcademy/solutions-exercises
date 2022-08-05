@@ -14,7 +14,6 @@ while (userName === undefined || userName === null || userName.length === 0) {
 
 alert("Welkom bij Guess the Number " + userName + "!!");
 
-/* Bonus 2*/
 let selectedMinNum = parseInt(
   prompt("Vanaf welk nummer mag er geraden worden? (standaard: 0)")
 );
@@ -44,8 +43,6 @@ while (maxNum <= minNum) {
     maxNum = selectedMaxNum;
   }
 }
-/* Bonus 2 end */
-
 
 alert(
   "Je hebt nu 5 pogingen om het getal te raden. Het getal ligt tussen " +
@@ -61,8 +58,7 @@ console.log("Pssst het nummer is: " + numberToBeGuessed);
 /* 
   start the game
 */
-while (currentGuess !== numberToBeGuessed) {
-  // Bonus 1
+while (true) {
   // if user has no more guesses reset and start again
   if (numberOfGuesses < 1) {
     alert(
@@ -88,33 +84,21 @@ while (currentGuess !== numberToBeGuessed) {
 
   alert("Je gok is: " + currentGuess);
 
-  // Bonus 1
   numberOfGuesses--;
 
-  let message = ""
-
   if (currentGuess === numberToBeGuessed) {
-    message = "Goed geraden, het nummer was inderdaad: " + currentGuess;
+    alert("Goed geraden, het nummer was inderdaad: " + currentGuess);
+    break;
   }
-  else {
-    if (currentGuess > numberToBeGuessed) {
-      message = "Helaas, je gok was te hoog."
-    }
-    if (currentGuess < numberToBeGuessed) {
-      message = "Helaas, je gok was te laag."
-    }
 
-    // Bonus 1
-    // Feedback the numberOfGuesses the user has
-    if (numberOfGuesses < 1) {
-      message += "Dit was je laatste poging.";
-    }
-    else {
-      message += "Je hebt nog: " +
-        numberOfGuesses +
-        " keuze(s) over. Probeer het opnieuw:";
-    }
-  }
+  let message = ""
+  message = currentGuess > numberToBeGuessed ? "Helaas, je gok was te hoog." : "Helaas, je gok was te laag."
+
+  // Feedback the numberOfGuesses the user has
+  let guessesLeft = numberOfGuesses < 1;
+  message += guessesLeft ? "Dit was je laatste poging." : `Je hebt nog: ${numberOfGuesses} +
+  keuze(s) over. Probeer het opnieuw:`;
+
   // Show resulting message to the user
   alert(message);
 }
