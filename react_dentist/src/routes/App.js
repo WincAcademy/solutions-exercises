@@ -1,14 +1,14 @@
 import React from "react";
+import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
 import "./App.css";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-import Home from "../views/Home";
 import Calendar from "../views/Calendar";
 import Day from "../views/Day";
+import Home from "../views/Home";
 
-import generateRandomAppointments from "../utils/utils";
+import { getInitialState } from "../utils/utils";
 
-const appointments = generateRandomAppointments(70);
+const { appointments } = getInitialState();
 
 const App = () => (
   <Router>
@@ -32,7 +32,7 @@ const App = () => (
             <Calendar appointments={appointments} />
           </Route>
           <Route path="/day">
-            <Day appointments={appointments.filter(app => app.day === 1)} />
+            <Day appointments={appointments.filter((app) => app.day === 1)} />
           </Route>
           <Route path="/">
             <Home />
