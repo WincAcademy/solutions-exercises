@@ -1,0 +1,13 @@
+{
+    "name": "esm",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "start": "nodemon --quiet"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
+}
