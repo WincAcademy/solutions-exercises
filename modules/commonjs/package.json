@@ -1,0 +1,13 @@
+{
+    "name": "commonjs",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "type": "commonjs",
+    "scripts": {
+        "start": "nodemon --quiet"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
+}
